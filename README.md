@@ -12,20 +12,185 @@ This project addresses this challenge by exploring solutions and tools for effec
 
 Our objective is to extract valuable insights and contextual information from these methods.
 
-## Data Analysis Plan
 
-We will use a range of NLP and ML techniques to extract insights from the oral history data. The main steps include:
+## Overview
 
-- **Descriptive Analysis**: Extracts information such as narrator’s name, generation, nationality, birth year, birth place, and camp location. This step includes creating distribution visualizations to address the first research question.
+This project involves the analysis of historical narratives from four collections: Densho repository, JASJ, JAMSJ, and Discover Nikkei. The goal is to extract insights and categorize text data through various methodologies including descriptive analysis, entity extraction, text classification, sentiment analysis, and topic modeling.
 
-- **Entity Extraction**: Captures additional entities such as organizations, facilities, languages, dates, and years. This step, in conjunction with sentiment analysis and topic modeling, helps answer the second and third research questions. It also allows for specific subject analysis by creating subsets from these entities.
+## Table of Contents
 
-- **Annotation Scheme**: Defines seven major categories related to Japanese American Incarceration history. This scheme helps classify all transcript data into these categories, facilitating more focused analysis. It is used in conjunction with text classification and is foundational for further analysis.
+1. [Data Collection and Processing](#data-collection-and-processing)
+2. [Methodologies](#methodologies)
+   - [Descriptive Analysis](#descriptive-analysis)
+   - [Entity Extraction](#entity-extraction)
+   - [Annotation Scheme](#annotation-scheme)
+   - [Text Classification](#text-classification)
+   - [Sentiment Analysis](#sentiment-analysis)
+   - [Word Cloud Generation](#word-cloud-generation)
+   - [Topic Modeling](#topic-modeling)
+3. [Data Analysis](#data-analysis)
 
-- **Text Classification**: Labels and classifies all text data into the seven categories defined by the annotation scheme. This method enables organized data analysis and focused examination of categorized topics.
+## Data Collection and Processing
 
-- **Sentiment Analysis**: Computes sentiments from text data to understand Japanese Americans' feelings about the seven topics or other specific subjects. This analysis helps address the second and third research questions.
+### Overview
 
-- **Topic Modeling**: Identifies subtopics within the main categories, highlighting keywords and relationships. This method provides a detailed understanding of each topic and complements sentiment analysis by offering insights into subtopics and keyword associations.
+Our project analyzes a set of 1,153 transcripts collected from diverse sources. The data collection involves web scraping, data structuring, and handling various formats and inconsistencies.
 
+### Data Collection
 
+**Setup: Importing Libraries and Tools**
+- Libraries Used: BeautifulSoup, requests, urllib.error, re, os, csv, zipfile
+- Tools: Python, Google Colab
+
+**Process**
+1. **Web Scraping**:
+   - Parsed HTML/XML documents using BeautifulSoup.
+   - Mimicked browser requests to avoid blocks.
+   - Collected data such as narrator names, descriptions, and transcripts.
+
+2. **Data Structuring**:
+   - Organized data into dictionaries and CSV files.
+   - Compressed CSV files into ZIP format for each collection.
+
+**Challenges and Solutions**
+- Adapted scraping techniques to handle varied formats.
+- Managed special characters and speaker changes.
+
+## Methodologies
+
+### Descriptive Analysis
+
+**Setup: Importing Libraries**
+- Libraries Used: re, datetime, pandas, NumPy, SpaCy
+
+**Process**
+1. **Data Extraction**:
+   - Extracted narrator information using regular expressions and SpaCy.
+
+2. **Categorization**:
+   - Classified narrators based on their birth year relative to 1942.
+
+**Challenges and Solutions**
+- Developed custom functions to handle data format variations.
+
+### Entity Extraction
+
+**Setup: Importing Libraries**
+- Libraries Used: SpaCy, pandas
+
+**Process**
+1. **Named Entity Recognition (NER)**:
+   - Utilized SpaCy’s pre-trained model for entity extraction.
+
+**Challenges and Solutions**
+- Chose SpaCy for its comprehensive NER tags.
+
+### Annotation Scheme
+
+**Setup: Defining Categories**
+- Categories: Pre-war background, Life After Removal, Military Services, Redress Movement, Legal Challenges, Government’s Decision, Returning of Ethnic Japanese
+
+**Process**
+1. **Category Definition**:
+   - Created and validated an annotation scheme for the narratives.
+
+**Challenges and Solutions**
+- Applied the scheme to validate its relevance with a subset of narrators.
+
+### Text Classification
+
+**Setup: Importing Libraries**
+- Libraries Used: NumPy, Pandas, Torch, sklearn, Transformers
+
+**Process**
+1. **Model Training**:
+   - Trained a BERT model for text classification.
+   - Managed GPU limitations by adjusting data size.
+
+2. **Performance Evaluation**:
+   - Evaluated model performance using accuracy, precision, recall, and F1 score.
+
+**Challenges and Solutions**
+- Improved accuracy through iterative adjustments.
+
+### Sentiment Analysis
+
+**Setup: Importing Libraries**
+- Libraries Used: re, nltk, transformers, torch.nn, scipy, pandas, numpy
+
+**Process**
+1. **Model Choice**:
+   - Used RoBERTa for sentiment analysis of lengthy transcripts.
+
+**Challenges and Solutions**
+- Managed extensive transcript lengths with RoBERTa.
+
+### Word Cloud Generation
+
+**Setup: Preprocessing**
+- Libraries Used: Not specified
+
+**Process**
+1. **Text Preprocessing**:
+   - Cleaned and tokenized text data for visualization.
+
+2. **Visualization**:
+   - Generated word clouds to represent frequently used words.
+
+**Challenges and Solutions**
+- Refined dataset to remove additional stopwords.
+
+### Topic Modeling
+
+**Setup: Importing Libraries**
+- Libraries Used: BERTopic, pandas, nltk
+
+**Process**
+1. **Text Cleaning**:
+   - Cleaned and tokenized text for topic modeling.
+
+2. **Topic Identification**:
+   - Identified and visualized topics using BERTopic.
+
+**Challenges and Solutions**
+- Controlled the number of sub-topics for clarity.
+
+## Data Analysis
+
+**Overview**
+
+The analysis includes descriptive statistics, entity extraction comparisons, and performance evaluations for text classification and sentiment analysis.
+
+### Descriptive Analysis
+
+**Process**
+- Analyzed patterns in 40 narratives related to birthplaces and camp locations.
+
+### Entity Extraction
+
+**Process**
+- Compared SpaCy and BERT for entity extraction, choosing SpaCy for its range of tags.
+
+### Annotation Scheme
+
+**Process**
+- Validated the annotation scheme with a subset of 10 narrators.
+
+### Text Classification
+
+**Process**
+- Compared GPT-3.5, LLaMA, and BERT, selecting BERT for its performance.
+
+### Sentiment Analysis
+
+**Process**
+- Chose RoBERTa for its efficiency in handling lengthy transcripts.
+
+### Topic Modeling
+
+**Process**
+- Limited the number of sub-topics for better clarity in topic modeling.
+
+---
+
+For further details and code implementations, please refer to the respective Jupyter Notebooks and scripts in the repository.
