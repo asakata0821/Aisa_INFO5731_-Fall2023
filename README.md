@@ -38,8 +38,3 @@ The research paper is organized as follows:
 4. **Results and Discussion**: Presents and discusses results with multiple visualizations.
 5. **Conclusion and Limitations**: Summarizes the research findings and outlines any limitations.
 
-## Figures
-
-- **Fig.1**: Overview of the research processes.
-
-We aim to unlock valuable insights and context within the oral history transcripts to better understand the history of Japanese-American Incarceration.
