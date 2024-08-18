@@ -28,13 +28,4 @@ We will use a range of NLP and ML techniques to extract insights from the oral h
 
 - **Topic Modeling**: Identifies subtopics within the main categories, highlighting keywords and relationships. This method provides a detailed understanding of each topic and complements sentiment analysis by offering insights into subtopics and keyword associations.
 
-## Research Structure
-
-The research paper is organized as follows:
-
-1. **Related Work**: Reviews 23 research papers relevant to our subject, highlighting useful methods for our analysis.
-2. **Data Collection**: Describes the processes of obtaining, cleaning, and preprocessing data using computational methods.
-3. **Methodologies**: Provides detailed explanations of the tools, methods, and analyses used in the main tasks.
-4. **Results and Discussion**: Presents and discusses results with multiple visualizations.
-5. **Conclusion and Limitations**: Summarizes the research findings and outlines any limitations.
 
