@@ -193,4 +193,4 @@ The analysis includes descriptive statistics, entity extraction comparisons, and
 
 ---
 
-For further details and code implementations, please refer to the respective Jupyter Notebooks and scripts in the repository.
+For further details and code implementations, please refer to the respective Jupyter Notebooks and scripts in the 'JAIOH_Code' repository.
