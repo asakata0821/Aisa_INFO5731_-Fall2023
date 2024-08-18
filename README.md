@@ -1,4 +1,4 @@
-# Japanese-American Incarceration Oral History Analysis
+# Japanese-American Incarceration Oral History (JAIOH) Analysis
 
 ## Overview
 
